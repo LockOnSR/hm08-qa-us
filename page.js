@@ -12,13 +12,12 @@ module.exports = {
     nextButton: 'button=Next',
     confirmButton: 'button=Confirm',
     paymentMethodButton: '.pp-text',
-    planSelectionButton: 'div=supportive',
     cardSelectionButton: 'div=Add card',
     linkCardButton: 'button=Link',
     closePaymentMethodModalButton: '.payment-picker .close-button',
+    supportivePlan: 'div=Supportive',
     // Modals
     phoneNumberModal: '.modal',
-    tariffPicker: 'tariff-picker shown';
     // Misc
     cardSignatureString: '.plc',
     cardPaymentMethodIcon: 'img[alt="card"]',

@@ -19,11 +19,11 @@ const helper = require('../../helper')
         
         
         // Selecting supportive mode
-        const tariffPicker = await $(page.tariffPicker);
-        await tariffPicker.waitForDisplay();
-        await tariffPicker.click(page.planSelectionButton);
-
-        await browser.page(2000);
+        const supportivePlan = await $(page.supportivePlan);
+        await supportivePlan.waitForDisplayed();
+        await supportivePlan.click();
+        
+        await browser.pause(2000);
 
         /*
         // Payment Input
