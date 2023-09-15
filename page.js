@@ -6,6 +6,7 @@ module.exports = {
     codeField: '#code',
     cardNumber: '#number',
     cardCode: '.card-second-row #code',
+    messageToDriver: '#comment',
     // Buttons
     callATaxiButton: 'button=Call a taxi',
     phoneNumberButton: '//div[starts-with(text(), "Phone number")]',
@@ -88,5 +89,15 @@ module.exports = {
         const closePaymentMethodModalButton = await $(this.closePaymentMethodModalButton);
         await closePaymentMethodModalButton.waitForDisplayed();
         await closePaymentMethodModalButton.click();
+    },
+    instructionsForDriver: async function() {
+        const messageToDriver = await $(this.messageToDriver);
+        await messageToDriver.waitForDisplayed();
+        await messageToDriver.setValue("Bring Kit Kats");
+    },
+    selectTariffType: async function() {
+        const supportivePlan = await $(this.supportivePlan);
+        await supportivePlan.waitForDisplayed();
+        await supportivePlan.click();
     }
 };
