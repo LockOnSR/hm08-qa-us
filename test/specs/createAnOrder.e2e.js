@@ -17,11 +17,10 @@ const helper = require('../../helper')
         await browser.url(`/`)
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
         
-    
+
         // Selecting supportive mode
         await page.selectTariffType();
-        
-     /*   
+     /*     
         // Payment Input
         await page.addPaymentMethodCard();
         //confirming the card has been selected after input
@@ -29,15 +28,19 @@ const helper = require('../../helper')
         await cardPaymentMethodIcon.waitForDisplayed();
         await expect(await $(cardPaymentMethodIcon)).toBeExisting();
 
-    
 
         // Input phone number
         const phoneNumber = helper.getPhoneNumber("+1");
         await page.submitPhoneNumber(phoneNumber);
         await expect(await helper.getElementByText(phoneNumber)).toBeExisting();
- */
+
         //message to the driver to bring kit kats
         await page.instructionsForDriver();
+*/
+        //selecting the blanket and handkerchief reqs
+        await page.blanketAndHandkerchiefAddOn();
+
+        await browser.pause(2000);
 
 
     })

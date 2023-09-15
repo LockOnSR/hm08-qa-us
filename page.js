@@ -17,11 +17,13 @@ module.exports = {
     linkCardButton: 'button=Link',
     closePaymentMethodModalButton: '.payment-picker .close-button',
     supportivePlan: 'div=Supportive',
+    selectBlanketAndHandkerchief: '.r-sw',
     // Modals
     phoneNumberModal: '.modal',
     // Misc
     cardSignatureString: '.plc',
     cardPaymentMethodIcon: 'img[alt="card"]',
+    orderRequirements: '.reqs-header',
     // Functions
     fillAddresses: async function(from, to) {
         const fromField = await $(this.fromField);
@@ -99,5 +101,12 @@ module.exports = {
         const supportivePlan = await $(this.supportivePlan);
         await supportivePlan.waitForDisplayed();
         await supportivePlan.click();
+    },
+    blanketAndHandkerchiefAddOn: async function() {
+        const orderRequirements = await $(this.orderRequirements);
+        await orderRequirements.click();
+        await orderRequirements.click();
+        const selectBlanketAndHandkerchief = await $(this.selectBlanketAndHandkerchief);
+        await selectBlanketAndHandkerchief.click();
     }
 };
