@@ -18,6 +18,8 @@ module.exports = {
     closePaymentMethodModalButton: '.payment-picker .close-button',
     supportivePlan: 'div=Supportive',
     selectBlanketAndHandkerchief: '.r-sw',
+    moreIceCream: './/div[text()="Ice cream"]/../..//div[text()="+"]',
+    callMyCar: '//*[@id="root"]/div/div[3]/div[4]/button/span[1]',
     // Modals
     phoneNumberModal: '.modal',
     // Misc
@@ -108,5 +110,16 @@ module.exports = {
         await orderRequirements.click();
         const selectBlanketAndHandkerchief = await $(this.selectBlanketAndHandkerchief);
         await selectBlanketAndHandkerchief.click();
+    },
+    moreIceCreamPlease: async function() {
+        const moreIceCream = await $(this.moreIceCream);
+        await moreIceCream.waitForDisplayed();
+        await moreIceCream.click();
+        await moreIceCream.click();
+    },
+    callMyRidePlease: async function() {
+        const callMyCar = await $(this.callMyCar);
+        await callMyCar.waitForDisplayed();
+        await callMyCar.click();
     }
 };

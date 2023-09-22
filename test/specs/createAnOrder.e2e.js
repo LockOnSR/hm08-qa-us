@@ -20,9 +20,11 @@ const helper = require('../../helper')
 
         // Selecting supportive mode
         await page.selectTariffType();
-     /*     
+        
+        
         // Payment Input
         await page.addPaymentMethodCard();
+
         //confirming the card has been selected after input
         const cardPaymentMethodIcon = await $(page.cardPaymentMethodIcon);
         await cardPaymentMethodIcon.waitForDisplayed();
@@ -36,11 +38,19 @@ const helper = require('../../helper')
 
         //message to the driver to bring kit kats
         await page.instructionsForDriver();
-*/
+
         //selecting the blanket and handkerchief reqs
         await page.blanketAndHandkerchiefAddOn();
+ 
 
-        await browser.pause(2000);
+        //selecting the Ice Cream button
+        await page.moreIceCreamPlease();
+
+       //selecting the Order button to search for a car
+        await page.callMyRidePlease();
+
+        //waiting this period of time allows for the driver found modal to appear with an arrival time
+        await browser.pause(40000);
 
 
     })
