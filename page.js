@@ -19,7 +19,7 @@ module.exports = {
     supportivePlan: 'div=Supportive',
     selectBlanketAndHandkerchief: '.r-sw',
     moreIceCream: './/div[text()="Ice cream"]/../..//div[text()="+"]',
-    callMyCar: '//*[@id="root"]/div/div[3]/div[4]/button/span[1]',
+    callMyCar: '.smart-button-main',
     // Modals
     phoneNumberModal: '.modal',
     // Misc
