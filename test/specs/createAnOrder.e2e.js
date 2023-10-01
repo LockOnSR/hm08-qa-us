@@ -50,6 +50,7 @@ describe('Adds instructions to driver', () => {
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
         await page.selectTariffType();
         await page.instructionsForDriver();
+        await expect(await $(page.messageToDriver)).toBeExisting();
     })
 }),
 
@@ -60,6 +61,7 @@ describe('Adds specified addon to the order', () => {
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
         await page.selectTariffType();
         await page.blanketAndHandkerchiefAddOn();
+        await expect(await $(page.selectBlanketAndHandkerchief)).toBeExisting();
     })
 }),
 
@@ -70,8 +72,10 @@ describe('Adds type of ice cream to thhe supportive tarrif order', () => {
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
         await page.selectTariffType();
         await page.moreIceCreamPlease();
+        await expect(await $(page.moreIceCream)).toBeExisting();
     })
 }),
+
 
 describe('Select Order button and waits for driver', () => {
     it('Should Order the ride and wait for the driver to be selected', async () => {
@@ -97,3 +101,4 @@ describe('Select Order button and waits for driver', () => {
         await browser.pause(40000)
     })
  })
+*/
